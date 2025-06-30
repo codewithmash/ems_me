@@ -6,7 +6,7 @@ import { sendCredentialsEmail } from "@/utils/email";
 // Base API URL - in production this would be your deployed backend URL
 // const API_URL = import.meta.env.VITE_API_URL || 'http://154.38.160.45:5000';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = "http://ems.yatharthinstitution.com/api";
 
 // Helper function for making API requests
 const apiRequest = async (endpoint: string, options: Record<string, any> = {}) => {
