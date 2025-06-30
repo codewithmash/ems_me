@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attendance Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h2 { margin-bottom: 0; }
+    .subtitle { color: gray; margin-bottom: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #f0f0f0; }
+  </style>
+</head>
+<body>
+  <h2><%= title %></h2>
+  <div class="subtitle"><%= subtitle %></div>
+  <div>Generated: <%= generatedAt %></div>
+
+  <h3>Attendance Summary</h3>
+  <ul>
+    <li>Total Records: <%= stats.total %></li>
+    <li>Present: <%= stats.present %> (<%= stats.presentRate %>%)</li>
+    <li>Absent: <%= stats.absent %> (<%= stats.absentRate %>%)</li>
+    <li>Late: <%= stats.late %> (<%= stats.lateRate %>%)</li>
+  </ul>
+
+  <table>
+    <thead>
+      <tr>
+        <% headers.forEach(h => { %><th><%= h %></th><% }) %>
+      </tr>
+    </thead>
+    <tbody>
+      <% rows.forEach(row => { %>
+        <tr>
+          <% row.forEach(cell => { %><td><%= cell %></td><% }) %>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
